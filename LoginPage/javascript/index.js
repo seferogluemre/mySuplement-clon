@@ -35,24 +35,6 @@
       });
   });
   
-  // Suplement İnfo Height
-  document.addEventListener('DOMContentLoaded', function () {
-      const downIcon = document.querySelector('.down-icon');
-      const expandableContent = document.querySelector('.expandable-content');
-      const closeBtn = document.querySelector('.close-btn');
-    
-      downIcon.addEventListener('click', function () {
-        if (expandableContent.style.maxHeight) {
-          expandableContent.style.maxHeight = null;
-        } else {
-          expandableContent.style.maxHeight = expandableContent.scrollHeight + 'px';
-        }
-      });
-    
-      closeBtn.addEventListener('click', function () {
-        expandableContent.style.maxHeight = null;
-      });
-    });
     
 
   // MyCart Sidebar
@@ -130,7 +112,11 @@
         sidebar.classList.remove('active');
       });
       
-      // giriş yapma Form yönlendirme
-      function girişFormYönlendirme(){
-        window.location.href="/LoginPage/login.html";
-      }
+    //  Link Ana sayfa yönlendirme
+    function homePageYonlendirme(){
+      window.location.href="/HomePage/index.html";
+    }
+
+    function SignUpPageYonlendirme(){
+      window.location.href="/SignUpPage/signup.html";
+    }

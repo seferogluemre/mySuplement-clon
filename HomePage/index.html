@@ -278,6 +278,12 @@
                 alt=""
                 id="cartImgTwo"
               />
+              <img
+                src="https://www.mysupplement.com.tr/catalog/view/theme/default/image/myeccount.png"
+                class="img-fluid d-xxl-none d-xl-none d-lg-none mobileAccountİcon"
+                alt=""
+                onclick="girişFormYönlendirme()"
+              />
               <!-- Sidebar Two -->
               <div class="mycartSidebarTwo rounded-4" id="mycartSidebarTwo">
                 <div class="container-fluid canvasContentone">
@@ -511,7 +517,11 @@
                 ></span>
                 <div class="dropdown-content py-xxl-1 py-lg-1">
                   <div class="buttonone">
-                    <button class="btn btn-outline-success w-75 fw-light">
+                    <button
+                      class="btn btn-outline-success w-75 fw-light"
+                      id="signbutton"
+                      onclick="girişFormYönlendirme()"
+                    >
                       Giriş yap
                     </button>
                   </div>
@@ -600,15 +610,14 @@
           <div class="row">
             <div class="col-lg-4 flex-column">
               <ul class="list-unstyled">
-                <li class="py-2">creatin</li>
-                <li class="py-2">creatin</li>
-                <li class="py-2">creatin</li>
-                <li class="py-2">creatin</li>
-                <li class="py-2">creatin</li>
-                <li class="py-2">creatin</li>
-                <li class="py-2">creatin</li>
-                <li class="py-2">creatin</li>
-                <li class="py-2">creatin</li>
+                <h3 class="fw-bold">Protein Tozu</h3>
+                <li class="py-2">Whey Protein</li>
+                <li class="py-2">Whey İzole</li>
+                <li class="py-2">Bezelye proteini</li>
+                <li class="py-2">Yumurta Akı Proteini</li>
+                <li class="py-2">Süt Proteini</li>
+                <li class="py-2">Soya Proteini</li>
+                <li class="py-2">Kolajen Proteini</li>
               </ul>
             </div>
           </div>
@@ -699,7 +708,6 @@
       </div>
     </section>
 
-    <!-- Slider-->
     <div class="container sliderContent">
       <div class="row">
         <div class="col-lg-12 col-xxl-12 pt-sm-0 pt-lg-2 pt-xxl-2">
@@ -770,8 +778,8 @@
       </div>
     </div>
 
-    <!-- Best Demons -->
-    <aside class="bestDemons">
+    <!-- Slider-->
+    <aside class="container bestDemons">
       <div class="container">
         <div class="text-center pt-5">
           <h2 class="fs-3 text-decoration-underline fw-bold">
@@ -1783,7 +1791,6 @@
     </div>
 
     <!-- Advantages -->
-
     <aside class="container-fluid py-1 bg-body-tertiary">
       <div class="container">
         <div class="row mt-5">
