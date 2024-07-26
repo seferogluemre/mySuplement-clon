@@ -101,7 +101,7 @@
           if (!isHovering) {
             templateSection.style.display = 'flex';
           }
-        }, 100);
+        }, 10);
       });
 
       templateSection.addEventListener('mouseover', () => {
@@ -117,6 +117,7 @@
           }
         }, 10);
       });
+      
 
       document.getElementById("cartImgTwo").addEventListener("click", function() {
         var sidebar = document.getElementById('mycartSidebar');
@@ -133,4 +134,16 @@
       // giriş yapma Form yönlendirme
       function girişFormYönlendirme(){
         window.location.href="/LoginPage/login.html";
+      }
+
+      function homepageyonlendirme(){
+        window.location.href="/HomePage/index.html";
+      }
+
+      function instagramYonlendirme(){
+        window.location.href="https://www.instagram.com/emreseferoglu1/";
+      }
+
+      function proteinTozuPage(){
+        window.location.href="/ProteinTozuPage/index.html";
       }

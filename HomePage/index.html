@@ -6,6 +6,7 @@
     <title>En İyi Supplementler | My Supplement'de</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="shortcut icon" href="" type="image/x-icon" />
+    <meta content="En İyi Supplementler MySupplementte!" />
     <script
       src="https://kit.fontawesome.com/1cf483120b.js"
       crossorigin="anonymous"
@@ -20,19 +21,35 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Top nav -->
     <div class="topMain shadow-lg">
-      <!-- Mobile Sidebar -->
-      <div
-        class="menu-icon d-xl-none mt-md-5 mt-sm-5 mt-lg-4 d-lg-none"
-        id="menu-icon"
-      >
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+      <!-- burger Menu -->
+      <div class="frame">
+        <button
+          onclick="this.querySelector('span').classList.toggle('is-closed')"
+          class="button menu-icon d-xl-none mt-md-5 mt-lg-4 d-lg-none"
+          id="menu-icon"
+        >
+          <span class="burger-5">
+            <svg viewBox="0 0 32 32">
+              <path
+                class="line line-top-bottom"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+              ></path>
+              <path class="line" d="M7 16 27 16"></path>
+            </svg>
+          </span>
+        </button>
       </div>
+
       <div class="sidebar" id="sidebar">
         <!-- Drop One -->
         <div class="accordion mt-5" id="accordionExample">
@@ -45,6 +62,7 @@
                 data-bs-target="#collapseOne"
                 aria-expanded="false"
                 aria-controls="collapseOne"
+                onclick="proteinTozuPage()"
               >
                 <img
                   src="https://www.mysupplement.com.tr/catalog/view/theme/default/image/protein_icon.svg"
@@ -54,13 +72,6 @@
                 <small class="pe-4">Protein Tozu</small>
               </button>
             </h2>
-            <div
-              id="collapseOne"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionExample"
-            >
-              <div class="accordion-body"></div>
-            </div>
           </div>
           <!-- Drop Two -->
           <div class="accordion-item bg-danger-subtle">
@@ -512,7 +523,7 @@
                   class="img-fluid mycardIcon ms-2 mb-1"
                   alt=""
                 />
-                <span class="fw-medium"
+                <span class="fw-medium" onclick="girişFormYönlendirme()"
                   >hesabım<i class="fas fa-arrow-down ms-2"></i
                 ></span>
                 <div class="dropdown-content py-xxl-1 py-lg-1">
@@ -525,7 +536,10 @@
                       Giriş yap
                     </button>
                   </div>
-                  <li class="text-decoration-none list-unstyled pt-3">
+                  <li
+                    class="text-decoration-none list-unstyled pt-3"
+                    onclick="girişFormYönlendirme()"
+                  >
                     Şifremi Unuttum
                   </li>
                   <li class="text-decoration-none list-unstyled">
@@ -639,6 +653,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 id="proteinTozuDrop"
+                onclick="proteinTozuPage()"
               >
                 Protein Tozu
               </a>
@@ -1099,7 +1114,7 @@
     <!-- Star İmages -->
     <section class="starImages">
       <div class="container-fluid">
-        <div class="text-center bg-dark">
+        <div class="text-center">
           <h5 class="fw-bold text-uppercase py-3 text-light">
             yıldızlar köşesi
           </h5>
@@ -1534,22 +1549,265 @@
     </section>
 
     <!-- Blog Post -->
-    <section class="blogSection">
+    <section class="blogSection position-relative">
       <div class="container">
         <div class="text-center">
           <h5>Blog</h5>
           <hr class="border-2" />
         </div>
-        <div class="row">
-          <div class="col-md-3 col-6">
+        <div
+          id="blogCarousel"
+          class="carousel slide d-lg-none"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/acilis-318x207.jpg"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Biceps Antrenman Programı</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Alias, rem?
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/adonis-kas%C4%B1-318x207.png"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Adonis nasıl çıkar</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Cupiditate, nihil.
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/12-318x207.jpg"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Barbell Curl Hareketi</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sapiente, voluptas.
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/barfiks-318x207.jpg"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Barfiks'in Faydaları</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Dolores, labore.
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/88-318x207.jpg"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Hip Trust Hareket</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Alias, rem?
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/aclik-318x207.jpg"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Kalori Açıgı Nedir?</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Cupiditate, nihil.
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/kafein-faydalari-nelerdir-2-318x207.jpg"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Kafein Faydaları</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sapiente, voluptas.
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/kardiyo-kas-yakar-m%C4%B1-318x207.png"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Kardiyo Kas Yakarmı</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Dolores, labore.
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-3 col-6">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/88-318x207.jpg"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Hip Trust Hareket</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Alias, rem?
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/aclik-318x207.jpg"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Kalori Açıgı Nedir?</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Cupiditate, nihil.
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/kafein-faydalari-nelerdir-2-318x207.jpg"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Kafein Faydaları</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sapiente, voluptas.
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="card">
+                <img
+                  src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/kardiyo-kas-yakar-m%C4%B1-318x207.png"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body d-grid">
+                  <h6>Kardiyo Kas Yakarmı</h6>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Dolores, labore.
+                  </p>
+                  <button class="btn btn-outline-secondary">
+                    Devamını Oku.....
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diğer carousel-item'lar da burada olacak -->
+        <!-- mobile screen carosel -->
+        <div class="row d-none d-lg-flex">
+          <div class="col-lg-3">
             <div class="card">
               <img
-                src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/acilis-318x207.jpg"
-                class="card-img-top"
+                src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/88-318x207.jpg"
+                class="card-img-top img-fluid"
                 alt="..."
               />
               <div class="card-body d-grid">
-                <h6>Biceps Antrenman Programı</h6>
+                <h6>Hip Trust Hareket</h6>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Alias, rem?
@@ -1560,15 +1818,15 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-6">
+          <div class="col-lg-3">
             <div class="card">
               <img
-                src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/adonis-kas%C4%B1-318x207.png"
-                class="card-img-top"
+                src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/erkek-vitamin-318x207.png"
+                class="card-img-top img-fluid"
                 alt="..."
               />
               <div class="card-body d-grid">
-                <h6>Adonis nasıl çıkar</h6>
+                <h6>Erkekler İçin Vitamin</h6>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Cupiditate, nihil.
@@ -1579,15 +1837,15 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-6">
+          <div class="col-lg-3">
             <div class="card">
               <img
-                src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/12-318x207.jpg"
-                class="card-img-top"
+                src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/mysupplement-mass-gainer-318x207.png"
+                class="card-img-top img-fluid"
                 alt="..."
               />
               <div class="card-body d-grid">
-                <h6>Barbell Curl Hareketi</h6>
+                <h6>Mass Gainer Ne kadar?</h6>
                 <p class="card-text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Sapiente, voluptas.
@@ -1598,15 +1856,15 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-6">
+          <div class="col-lg-3">
             <div class="card">
               <img
-                src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/barfiks-318x207.jpg"
-                class="card-img-top"
+                src="https://www.mysupplement.com.tr/image/cache/catalog/1-Blog/karnitin-318x207.png"
+                class="card-img-top img-fluid"
                 alt="..."
               />
               <div class="card-body d-grid">
-                <h6>Barfiks'in Faydaları</h6>
+                <h6>Hangi Yag Yakıcı</h6>
                 <p class="card-text">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Dolores, labore.
@@ -1618,6 +1876,25 @@
             </div>
           </div>
         </div>
+        <div class="row d-none d-lg-flex"></div>
+        <button
+          class="carousel-control-prev custom-control"
+          type="button"
+          data-bs-target="#blogCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next custom-control"
+          type="button"
+          data-bs-target="#blogCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </section>
 
@@ -1869,9 +2146,10 @@
     </aside>
 
     <!-- Footer -->
-    <footer class="footer bg-dark">
+    <footer class="footer">
       <div class="container mb-0 pb-0 text-light">
         <div class="row py-3 footerRow">
+          <!-- Address Column -->
           <div class="col-lg-3 col-md-6 col-sm-12 footerCol">
             <h5>Adres</h5>
             <hr class="border-2 FooterHr" />
@@ -1880,6 +2158,8 @@
               No: 21 J BEŞİKTAŞ/ İSTANBUL Telefon : 0850 755 7884
             </p>
           </div>
+
+          <!-- MySupplement Column -->
           <div class="col-lg-3 col-md-6 col-sm-12 footerCol">
             <h5>MySupplement</h5>
             <hr class="border-2 FooterHr" />
@@ -1890,6 +2170,8 @@
               <li>Blog</li>
             </ul>
           </div>
+
+          <!-- Security Column -->
           <div class="col-lg-3 col-md-6 col-sm-12 footerCol">
             <h5>Güvenlik</h5>
             <hr class="border-2 FooterHr" />
@@ -1901,11 +2183,13 @@
               <li>Müşteri Aydınlatma Metni</li>
             </ul>
           </div>
+
+          <!-- Categories Column -->
           <div class="col-lg-3 col-md-6 col-sm-12 footerCol">
             <h5>Kategoriler</h5>
             <hr class="border-2 FooterHr" />
             <ul class="list-unstyled">
-              <li>Protein Tozu</li>
+              <li onclick="proteinTozuPage()">Protein Tozu</li>
               <li>Kilo Ve hacim</li>
               <li>AminoAsit Ve Bcaa</li>
               <li>Kreatin</li>
@@ -1914,11 +2198,24 @@
               <li>Vitaminker</li>
             </ul>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 footerCol">
+
+          <!-- Follow Us Column -->
+          <div class="col-lg-3 d-none d-lg-block footerCol">
+            <!-- Empty column to push "Follow Us" down on larger screens -->
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 col-sm-12 align-items-center justify-content-center footerCol"
+          >
             <h5>Bizi Takip Edin</h5>
-            <hr class="border-2 FooterHr" />
-            <div class="text-decoration-none">
-              <a href="#" class="me-2">
+            <hr class="border-2 FooterHr w-100" />
+            <div class="d-flex justify-content-center">
+              <a
+                href="#"
+                class="me-2"
+                onclick="instagramYonlendirme()"
+                target="_blank"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="26"
@@ -1932,7 +2229,7 @@
                   />
                 </svg>
               </a>
-              <a href="#">
+              <a href="#" onclick="instagramYonlendirme()" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="26"
@@ -1946,6 +2243,26 @@
                   />
                 </svg>
               </a>
+            </div>
+          </div>
+
+          <!-- Footer Image and Info Column -->
+          <div
+            class="col-lg-12 col-md-12 col-sm-12 footerCol mt-3 px-lg-5 d-flex flex-column align-items-center justify-content-center"
+          >
+            <h5 class="px-2 ms-4">
+              <p>
+                Bu Site <strong>Emre Seferoglu</strong> Tarafından
+                Hazırlanmıştır!
+              </p>
+            </h5>
+            <hr class="border-2 FooterHr w-100" />
+            <div class="text-decoration-none mt-2">
+              <img
+                src="https://www.mysupplement.com.tr/image/odemesistemleri.png"
+                class="img-fluid bg-body-tertiary rounded-2"
+                alt="Fotograf bulunamadı"
+              />
             </div>
           </div>
         </div>

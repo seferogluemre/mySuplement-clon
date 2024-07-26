@@ -118,5 +118,10 @@
     }
 
     function SignUpPageYonlendirme(){
-      window.location.href="/SignUpPage/signup.html";
+      window.location.href="/SignUpPage/index.html";
     }
+
+    function proteinPageyonlendirme(){
+      window.location.href="/ProteinTozuPage/index.html";
+    }
+

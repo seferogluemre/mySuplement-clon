@@ -20,18 +20,37 @@
       src="https://kit.fontawesome.com/1cf483120b.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Sidebar -->
     <div class="topMain shadow-lg">
       <!-- Mobile Sidebar -->
-      <div
-        class="menu-icon d-xl-none mt-md-5 mt-sm-5 mt-lg-4 d-lg-none"
-        id="menu-icon"
-      >
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+      <div class="frame">
+        <button
+          onclick="this.querySelector('span').classList.toggle('is-closed')"
+          class="button menu-icon d-xl-none mt-md-5 mt-lg-4 d-lg-none"
+          id="menu-icon"
+        >
+          <span class="burger-5">
+            <svg viewBox="0 0 32 32">
+              <path
+                class="line line-top-bottom"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+              ></path>
+              <path class="line" d="M7 16 27 16"></path>
+            </svg>
+          </span>
+        </button>
       </div>
       <div class="sidebar" id="sidebar">
         <!-- Drop One -->
@@ -45,6 +64,7 @@
                 data-bs-target="#collapseOne"
                 aria-expanded="false"
                 aria-controls="collapseOne"
+                onclick="proteinPageyonlendirme()"
               >
                 <img
                   src="https://www.mysupplement.com.tr/catalog/view/theme/default/image/protein_icon.svg"
@@ -54,13 +74,6 @@
                 <small class="pe-4">Protein Tozu</small>
               </button>
             </h2>
-            <div
-              id="collapseOne"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionExample"
-            >
-              <div class="accordion-body"></div>
-            </div>
           </div>
           <!-- Drop Two -->
           <div class="accordion-item bg-danger-subtle">
@@ -271,6 +284,7 @@
                 src="https://www.mysupplement.com.tr/image/catalog/my-supplement-logo1.png"
                 class="img-fluid headerLogo1 py-1"
                 alt=""
+                onclick="homePageYonlendirme()"
               />
               <img
                 src="https://www.mysupplement.com.tr/catalog/view/theme/default/image/mycart_icn.png"
@@ -639,6 +653,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 id="proteinTozuDrop"
+                onclick="proteinPageyonlendirme()"
               >
                 Protein Tozu
               </a>
@@ -830,10 +845,12 @@
                   <div>
                     <div class="text-center d-grid">
                       <button class="btn btn-outline-info">
-                        <a class="text-decoration-none text-black"
-                        href="https://www.facebook.com/login/reauth.php?app_id=543793544253750&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.8%2Fdialog%2Foauth%3Fapp_id%3D543793544253750%26cbt%3D1721908523470%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfc2527cc047afaebd%2526domain%253Dwww.mysupplement.com.tr%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.mysupplement.com.tr%25252Ff0a97ebb9516f1bb4%2526relation%253Dopener%26client_id%3D543793544253750%26display%3Dpopup%26domain%3Dwww.mysupplement.com.tr%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.mysupplement.com.tr%252Fgiris-yap%26locale%3Den_US%26logger_id%3Dff5f776c45007e3be%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfd902570c3a0c13d4%2526domain%253Dwww.mysupplement.com.tr%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.mysupplement.com.tr%25252Ff0a97ebb9516f1bb4%2526relation%253Dopener%2526frame%253Df26120be8d6861cd2%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Demail%26sdk%3Djoey%26version%3Dv2.8%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dfd902570c3a0c13d4%26domain%3Dwww.mysupplement.com.tr%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.mysupplement.com.tr%252Ff0a97ebb9516f1bb4%26relation%3Dopener%26frame%3Df26120be8d6861cd2%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=tr_TR&pl_dbl=0"
-                        target="_blank"
-                        >FaceBook ile Baglan</a
+                        <a
+                          class="text-decoration-none text-black"
+                          href="https://www.facebook.com/login/reauth.php?app_id=543793544253750&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.8%2Fdialog%2Foauth%3Fapp_id%3D543793544253750%26cbt%3D1721908523470%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfc2527cc047afaebd%2526domain%253Dwww.mysupplement.com.tr%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.mysupplement.com.tr%25252Ff0a97ebb9516f1bb4%2526relation%253Dopener%26client_id%3D543793544253750%26display%3Dpopup%26domain%3Dwww.mysupplement.com.tr%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.mysupplement.com.tr%252Fgiris-yap%26locale%3Den_US%26logger_id%3Dff5f776c45007e3be%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfd902570c3a0c13d4%2526domain%253Dwww.mysupplement.com.tr%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.mysupplement.com.tr%25252Ff0a97ebb9516f1bb4%2526relation%253Dopener%2526frame%253Df26120be8d6861cd2%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Demail%26sdk%3Djoey%26version%3Dv2.8%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dfd902570c3a0c13d4%26domain%3Dwww.mysupplement.com.tr%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.mysupplement.com.tr%252Ff0a97ebb9516f1bb4%26relation%3Dopener%26frame%3Df26120be8d6861cd2%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=tr_TR&pl_dbl=0"
+                          target="_blank"
+                          >FaceBook ile Baglan</a
+                        >
                       </button>
                     </div>
                   </div>
@@ -896,7 +913,12 @@
                 </div>
               </div>
               <div class="d-grid pt-2">
-                <button class="btn btn-success" onclick="SignUpPageYonlendirme()">Hemen Üye Ol  <i class="fas fa-smile"></i></button>
+                <button
+                  class="btn btn-success"
+                  onclick="SignUpPageYonlendirme()"
+                >
+                  Hemen Üye Ol <i class="fas fa-smile"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -983,9 +1005,10 @@
     </aside>
 
     <!-- Footer -->
-    <footer class="footer bg-dark">
+    <footer class="footer">
       <div class="container mb-0 pb-0 text-light">
         <div class="row py-3 footerRow">
+          <!-- Address Column -->
           <div class="col-lg-3 col-md-6 col-sm-12 footerCol">
             <h5>Adres</h5>
             <hr class="border-2 FooterHr" />
@@ -994,6 +1017,8 @@
               No: 21 J BEŞİKTAŞ/ İSTANBUL Telefon : 0850 755 7884
             </p>
           </div>
+
+          <!-- MySupplement Column -->
           <div class="col-lg-3 col-md-6 col-sm-12 footerCol">
             <h5>MySupplement</h5>
             <hr class="border-2 FooterHr" />
@@ -1004,6 +1029,8 @@
               <li>Blog</li>
             </ul>
           </div>
+
+          <!-- Security Column -->
           <div class="col-lg-3 col-md-6 col-sm-12 footerCol">
             <h5>Güvenlik</h5>
             <hr class="border-2 FooterHr" />
@@ -1015,11 +1042,13 @@
               <li>Müşteri Aydınlatma Metni</li>
             </ul>
           </div>
+
+          <!-- Categories Column -->
           <div class="col-lg-3 col-md-6 col-sm-12 footerCol">
             <h5>Kategoriler</h5>
             <hr class="border-2 FooterHr" />
             <ul class="list-unstyled">
-              <li>Protein Tozu</li>
+              <li onclick="proteinPageyonlendirme()">Protein Tozu</li>
               <li>Kilo Ve hacim</li>
               <li>AminoAsit Ve Bcaa</li>
               <li>Kreatin</li>
@@ -1028,11 +1057,24 @@
               <li>Vitaminker</li>
             </ul>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 footerCol">
+
+          <!-- Follow Us Column -->
+          <div class="col-lg-3 d-none d-lg-block footerCol">
+            <!-- Empty column to push "Follow Us" down on larger screens -->
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 col-sm-12 align-items-center justify-content-center footerCol"
+          >
             <h5>Bizi Takip Edin</h5>
-            <hr class="border-2 FooterHr" />
-            <div class="text-decoration-none">
-              <a href="#" class="me-2">
+            <hr class="border-2 FooterHr w-100" />
+            <div class="d-flex justify-content-center">
+              <a
+                href="#"
+                class="me-2"
+                onclick="instagramYonlendirme()"
+                target="_blank"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="26"
@@ -1046,7 +1088,7 @@
                   />
                 </svg>
               </a>
-              <a href="#">
+              <a href="#" onclick="instagramYonlendirme()" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="26"
@@ -1060,6 +1102,26 @@
                   />
                 </svg>
               </a>
+            </div>
+          </div>
+
+          <!-- Footer Image and Info Column -->
+          <div
+            class="col-lg-12 col-md-12 col-sm-12 footerCol mt-3 px-lg-5 d-flex flex-column align-items-center justify-content-center"
+          >
+            <h5 class="px-2 ms-4">
+              <p>
+                Bu Site <strong>Emre Seferoglu</strong> Tarafından
+                Hazırlanmıştır!
+              </p>
+            </h5>
+            <hr class="border-2 FooterHr w-100" />
+            <div class="text-decoration-none mt-2">
+              <img
+                src="https://www.mysupplement.com.tr/image/odemesistemleri.png"
+                class="img-fluid bg-body-tertiary rounded-2"
+                alt="Fotograf bulunamadı"
+              />
             </div>
           </div>
         </div>

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sayfa Kod</title>
-    <link rel="stylesheet" href="code.css" />
+    <title>HEMEN ÜYE OL | MySupplement</title>
+    <link rel="stylesheet" href="/SignUpPage/Styles/index.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -51,7 +51,6 @@
           </span>
         </button>
       </div>
-
       <div class="sidebar" id="sidebar">
         <!-- Drop One -->
         <div class="accordion mt-5" id="accordionExample">
@@ -64,6 +63,7 @@
                 data-bs-target="#collapseOne"
                 aria-expanded="false"
                 aria-controls="collapseOne"
+                onclick="proteintozyonlendirme()"
               >
                 <img
                   src="https://www.mysupplement.com.tr/catalog/view/theme/default/image/protein_icon.svg"
@@ -73,14 +73,8 @@
                 <small class="pe-4">Protein Tozu</small>
               </button>
             </h2>
-            <div
-              id="collapseOne"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionExample"
-            >
-              <div class="accordion-body"></div>
-            </div>
           </div>
+
           <!-- Drop Two -->
           <div class="accordion-item bg-danger-subtle">
             <h2 class="accordion-header">
@@ -290,6 +284,7 @@
                 src="https://www.mysupplement.com.tr/image/catalog/my-supplement-logo1.png"
                 class="img-fluid headerLogo1 py-1"
                 alt=""
+                onclick="homepageyonlendirme()"
               />
               <img
                 src="https://www.mysupplement.com.tr/catalog/view/theme/default/image/mycart_icn.png"
@@ -530,8 +525,9 @@
                   src="https://www.mysupplement.com.tr/catalog/view/theme/default/image/myeccount.png"
                   class="img-fluid mycardIcon ms-2 mb-1"
                   alt=""
+                  onclick="loginyonlendirme()"
                 />
-                <span class="fw-medium"
+                <span class="fw-medium" onclick="loginyonlendirme()"
                   >hesabım<i class="fas fa-arrow-down ms-2"></i
                 ></span>
                 <div class="dropdown-content py-xxl-1 py-lg-1">
@@ -539,7 +535,7 @@
                     <button
                       class="btn btn-outline-success w-75 fw-light"
                       id="signbutton"
-                      onclick="girişFormYönlendirme()"
+                      onclick="loginyonlendirme()"
                     >
                       Giriş yap
                     </button>
@@ -727,6 +723,95 @@
       </div>
     </section>
 
+    <main class="signUpMain bg-body-tertiary mb-5" id="signUpMain">
+      <div class="container">
+        <ul class="list-unstyled text-decoration-none d-flex flex-row">
+          <li class="me-3">
+            MySupplement<i class="arrow-right fas fa-arrow-right"></i>
+          </li>
+          <li class="me-3">
+            hesabım<i class="arrow-right fas fa-arrow-right"></i>
+          </li>
+          <li class="fw-bolder ms-3">
+            Hemen Üye Ol<i class="arrow-right fas fa-arrow-right"></i>
+          </li>
+        </ul>
+        <div class="text-center">
+          <h5>Hemen Üye Ol</h5>
+        </div>
+        <div class="container">
+          <div class="form mx-auto">
+            <form
+              action="https://formsubmit.co/yunusemre5331@icloud.com"
+              method="POST"
+            >
+              <div class="mb-3">
+                <label for="name" class="form-label">İsim:</label>
+                <input type="text" id="name" name="name" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label for="surname" class="form-label">Soyisim:</label>
+                <input
+                  type="text"
+                  id="surname"
+                  name="surname"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">E-Mail:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="phoneNumber" class="form-label"
+                  >Telefon Numarası</label
+                >
+                <input
+                  type="tel"
+                  id="tel"
+                  class="form-control"
+                  name="phoneNumber"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Parola:</label>
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  name="password"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="passwordConfirm" class="form-label"
+                  >Şifre Dogrula</label
+                >
+                <input
+                  type="password"
+                  name="passwordConfirm"
+                  id="passwordConfirm"
+                  class="form-control"
+                />
+              </div>
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="btn btn-primary w-25 text-center mt-2 mb-2"
+                >
+                  Kayıt Ol
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <!-- Advantages -->
     <aside class="container-fluid py-1 bg-body-tertiary">
       <div class="container">
@@ -849,7 +934,7 @@
             <h5>Kategoriler</h5>
             <hr class="border-2 FooterHr" />
             <ul class="list-unstyled">
-              <li>Protein Tozu</li>
+              <li onclick="proteintozyonlendirme()">Protein Tozu</li>
               <li>Kilo Ve hacim</li>
               <li>AminoAsit Ve Bcaa</li>
               <li>Kreatin</li>
@@ -956,128 +1041,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script>
-      // Mobile Sidebar
-      const menuIcon = document.getElementById("menu-icon");
-      const sidebar = document.getElementById("sidebar");
-      const body = document.body;
-      menuIcon.addEventListener("click", function () {
-        body.classList.toggle("menu-open");
-      });
-
-      // User account drop
-      document.addEventListener("DOMContentLoaded", function () {
-        var accountElement = document.querySelector(".Meaccount");
-        var dropdownContent = document.querySelector(".dropdown-content");
-
-        let timeoutId;
-
-        accountElement.addEventListener("mouseenter", function () {
-          clearTimeout(timeoutId);
-          dropdownContent.style.display = "block";
-        });
-
-        accountElement.addEventListener("mouseleave", function () {
-          timeoutId = setTimeout(function () {
-            dropdownContent.style.display = "none";
-          }, 10);
-        });
-
-        dropdownContent.addEventListener("mouseenter", function () {
-          clearTimeout(timeoutId);
-        });
-
-        dropdownContent.addEventListener("mouseleave", function () {
-          timeoutId = setTimeout(function () {
-            dropdownContent.style.display = "none";
-          }, 2000);
-        });
-      });
-
-      // Suplement İnfo Height
-
-      // MyCart Sidebar
-      const cartLink = document.getElementById("mycartLink");
-      const cartSidebar = document.getElementById("mycartSidebar");
-      const closeIcon = document.getElementById("close-iconOne");
-      const domBody = document.body;
-      cartLink.addEventListener("click", function () {
-        body.classList.toggle("mycartLink");
-        cartSidebar.style.zIndex = 1000;
-      });
-      closeIcon.addEventListener("click", () => {
-        body.classList.remove("mycartLink");
-      });
-
-      // My Cart Top
-      document
-        .getElementById("cartImgTwo")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          var sidebar = document.getElementById("mycartSidebarTwo");
-          sidebar.classList.add("active");
-          document.body.style.overflow = "hidden";
-        });
-      const closeIconTwo = document.getElementById("close-iconTwo");
-      closeIconTwo.addEventListener("click", () => {
-        body.classList.remove("mycartSidebarTwo");
-      });
-      document
-        .getElementById("close-iconTwo")
-        .addEventListener("click", function () {
-          var sidebar = document.getElementById("mycartSidebarTwo");
-          sidebar.classList.remove("active");
-          document.body.style.overflow = "auto";
-        });
-
-      // Hover Template
-      const hoverLink = document.getElementById("proteinTozuDrop");
-      const templateSection = document.getElementById("templateSection");
-      let isHovering = false;
-
-      hoverLink.addEventListener("mouseover", () => {
-        templateSection.style.display = "flex";
-        isHovering = true;
-      });
-
-      hoverLink.addEventListener("mouseout", () => {
-        isHovering = false;
-        setTimeout(() => {
-          if (!isHovering) {
-            templateSection.style.display = "flex";
-          }
-        }, 100);
-      });
-
-      templateSection.addEventListener("mouseover", () => {
-        templateSection.style.display = "flex";
-        isHovering = true;
-      });
-
-      templateSection.addEventListener("mouseout", () => {
-        isHovering = false;
-        setTimeout(() => {
-          if (!isHovering) {
-            templateSection.style.display = "none";
-          }
-        }, 10);
-      });
-
-      document
-        .getElementById("cartImgTwo")
-        .addEventListener("click", function () {
-          var sidebar = document.getElementById("mycartSidebar");
-          sidebar.classList.toggle("active");
-          sidebar.style.top = 0;
-        });
-
-      // Kapama işlevi için close-icon'a tıklama olayını dinle
-      document
-        .getElementById("close-icon")
-        .addEventListener("click", function () {
-          var sidebar = document.getElementById("mycartSidebar");
-          sidebar.classList.remove("active");
-        });
-    </script>
+    <script src="/SignUpPage/Javascript/script.js"></script>
   </body>
 </html>

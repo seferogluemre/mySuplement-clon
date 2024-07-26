@@ -4,7 +4,7 @@
   /* Body */
   body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif !important; 
   }
   
   .discountTop{
@@ -45,17 +45,66 @@
   transition: left 0.3s ease-in-out;
   z-index: 1000;
   }
-  .menu-open .bar1 {
-  transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  
-  .menu-open .bar2 {
-  opacity: 0;
-  }
-  
-  .menu-open .bar3 {
-  transform: rotate(45deg) translate(-5px, -6px);
-  }
+    /* Sidebar Animation */
+    .button {
+      background: rgb(19, 94, 207);
+      border: 0;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      position: fixed;
+      top: -1%;
+      left: 25px;
+      place-items: center;
+      cursor: pointer;
+      padding: 0;
+      opacity: 0.6;
+      scale: 0.7;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: 0.175s;
+    }
+
+    .button:hover {
+      opacity: 1;
+      background: #2f45a7;
+    }
+
+    .burger-5 {
+      scale: 1.3;
+      height: 34px;
+    }
+
+    .burger-5 svg {
+      height: 36px;
+      transform: translate(-1px, -1px);
+      transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .burger-5 .line {
+      fill: none;
+      stroke: white;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.75;
+      transition: stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .burger-5 .line-top-bottom {
+      stroke-dasharray: 12 63;
+    }
+
+    .is-closed.burger-5 svg {
+      transform: rotate(-45deg) translate(0);
+    }
+
+    .is-closed.burger-5 svg .line-top-bottom {
+      stroke-dasharray: 20 300;
+      stroke-dashoffset: -32.42;
+    }
+
+
   
   .menu-open .sidebar {
   left: 0;
@@ -393,23 +442,27 @@
   
   
   /* Footer */
+  .footer{
+    padding-top: 50px;
+    background-color: #000 !important;
+  }
   .FooterHr{
-  border: 2px solid #38f04a;
+    border: 2px solid #38f04a;
   }
   
   .followİcon{
-  border-radius: 25%;
-  color: #39f7ca;
+    border-radius: 25%;
+    color: #39f7ca;
   }
-  .footer{
-  padding-top: 50px;
-  }
-  .footerRow{
   
-  padding: 0px 180px;
+  .footerRow{
+    padding: 0px 180px;
   }
   .footerRow h5{
-  color: rgb(87, 144, 250);
+    color: rgb(87, 144, 250);
+  }
+  .footerCol{
+    padding: 15px !important;
   }
   
   .advantages p{
@@ -478,10 +531,11 @@
       margin-bottom: 15px;
     }
     .topMain{
-      margin: 3px 12px;
+      margin: 5px 12px;
     }
     .menu-icon{
-      top: 58px;
+      margin-top: 55px;
+      
     }
     .headerLogo1{
       width: 210px;
@@ -529,8 +583,9 @@
     }
     .topMain{
       position: sticky !important;
-      top: 0; 
+      top: 10px !important; 
       z-index: 1000;
+      margin-top: 10px;
     }
     .bestDemons .card{
       width: 14rem;
@@ -563,6 +618,7 @@
     .headerLogo1{
       width: 40% !important;
     }
+    
   }
   
   /* Small Screen */
@@ -570,6 +626,8 @@
   .dropSection{
     display: none;
   } 
+  
+  
   .cartImgTwo{
     position: relative;
     left: 20% !important;
@@ -601,9 +659,7 @@
     margin-bottom: 15px;
     width: 45% !important;
   }
-  .menu-icon{
-    top: 5px;
-  }
+  
   .card{
     width: 12rem !important;
     margin: 10px auto;
@@ -613,6 +669,14 @@
     width: 85%;
     height: 65%;
     overflow: hidden;
+  }
+  .menu-icon{
+    margin-top: 65px;
+  }
+  .topMain{
+    position: sticky !important;
+    top: 15px !important; 
+    z-index: 1000;
   }
   
   }
@@ -638,13 +702,6 @@
     .headerButton{
       display: none!important;
     }
-    .sliderContent{
-      margin-top: 50px;
-    }
-    .menu-icon div{
-      height: 3px;
-      width: 110%;
-    }
     .headerLogo1{
       width: 40%;
     }
@@ -652,10 +709,12 @@
       display: none !important;
     }
     .topMain{
-      margin:6px 50px !important;
+      position: sticky !important;
+      top: 15px !important; 
+      z-index: 1000;
     }
     .menu-icon{
-      margin-left: 20px;
+      top: 5px;
     }
     .mycartSidebarTwo {
       left: 5%;
@@ -672,6 +731,7 @@
       height: 45px !important;
       margin-bottom: 15px;
     }
+   
   }
   
   /* -------------------------------- */
@@ -711,7 +771,9 @@
       height: 40px !important;
       margin-bottom: 15px;
     }
-    
+    .footerCol {
+      margin-bottom: 20px;
+    }
   }
   
   /* plus Media */
@@ -740,7 +802,17 @@
   .topMain{
     position: relative;
   }
-  
+  .footerCol {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .footerCol:nth-child(5) {
+    order: 1;
+  }
+  .footerCol:last-child {
+    order: 2;
+  }
   }
   
   /* None Screen */

@@ -4,7 +4,7 @@
 /* Body */
 body {
 margin: 0;
-font-family: Arial, sans-serif;
+font-family: 'Roboto', sans-serif !important;
 }
 
 .discountTop{
@@ -253,7 +253,7 @@ margin-left: auto !important;
 }
 
 
-/* Drop bitişi */
+
 
 /* Sidebar İmages */
 
@@ -269,10 +269,69 @@ height: 27px !important;
 
 
 
-/* Dropdown Bitiş */
+/* Sidebar Animation */
+.button {
+  background: rgb(41, 120, 240);
+  border: 0;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  position: fixed;
+  top: -1%;
+  left: 25px;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.6;
+  scale: 0.7;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.175s;
+}
+
+.button:hover {
+  opacity: 1;
+  background: #2f45a7;
+}
+
+.burger-5 {
+  scale: 1.3;
+  height: 34px;
+}
+
+.burger-5 svg {
+  height: 36px;
+  transform: translate(-1px, -1px);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burger-5 .line {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.75;
+  transition: stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burger-5 .line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.is-closed.burger-5 svg {
+  transform: rotate(-45deg) translate(0);
+}
+
+.is-closed.burger-5 svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
 
 
 /* ------------------------------------ */
+
 
 /* Search Input */
 
@@ -429,25 +488,28 @@ font-size: 2rem;
 
 
 /* Footer */
+.footer{
+  padding-top: 50px;
+  background-color: #000 !important;
+}
 .FooterHr{
-border: 2px solid #38f04a;
+  border: 2px solid #38f04a !important;
 }
 
 .followİcon{
-border-radius: 25%;
-color: #39f7ca;
+  border-radius: 25% !important;
+  color: #39f7ca !important;
 }
-.footer{
-padding-top: 50px;
-}
-.footerRow{
 
-padding: 0px 180px;
+.footerRow{
+  padding: 0px 180px;
 }
 .footerRow h5{
-color: rgb(87, 144, 250);
+  color: rgb(87, 144, 250);
 }
-
+.footerCol{
+  padding: 15px !important;
+}
 .advantages p{
 margin: 0;
 }
@@ -513,12 +575,7 @@ color: rgb(80, 80, 227);
     height: 40px !important;
     margin-bottom: 15px;
   }
-  .topMain{
-    margin: 3px 12px;
-  }
-  .menu-icon{
-    top: 58px;
-  }
+  
   .headerLogo1{
     width: 210px;
   }
@@ -563,11 +620,6 @@ color: rgb(80, 80, 227);
   .Meaccount{
     display: none;
   }
-  .topMain{
-    position: sticky !important;
-    top: 0; 
-    z-index: 1000;
-  }
   .bestDemons .card{
     width: 14rem;
   }
@@ -599,7 +651,14 @@ color: rgb(80, 80, 227);
   .headerLogo1{
     width: 40% !important;
   }
-  
+  .topMain{
+    position: sticky;
+    top: 10px ;
+    margin: 3px 12px;
+  }
+  .menu-icon{
+    top: 45px;
+  }
 }
 
 /* Small Screen */
@@ -639,7 +698,12 @@ margin-top: 50px;
   width: 45% !important;
 }
 .menu-icon{
-  top: 5px;
+  margin-top: 60px;
+}
+.topMain{
+  position: sticky !important;
+  top: 15px !important; 
+  z-index: 1000;
 }
 .card{
   width: 12rem !important;
@@ -678,10 +742,7 @@ margin-top: 50px;
   .sliderContent{
     margin-top: 50px;
   }
-  .menu-icon div{
-    height: 3px;
-    width: 110%;
-  }
+ 
   .headerLogo1{
     width: 40%;
   }
@@ -689,10 +750,12 @@ margin-top: 50px;
     display: none !important;
   }
   .topMain{
-    margin:6px 50px !important;
+    position: sticky;
+    top: 15px;
+    z-index: 1000;
   }
   .menu-icon{
-    margin-left: 20px;
+    margin-left: 10px;
   }
   .mycartSidebarTwo {
     left: 5%;
@@ -749,7 +812,9 @@ margin-top: 50px;
     height: 40px !important;
     margin-bottom: 15px;
   }
-  
+  .footerCol {
+    margin-bottom: 20px;
+  }
 }
 
 /* plus Media */
@@ -778,7 +843,17 @@ margin-top: 50px;
 .topMain{
   position: relative;
 }
-
+.footerCol {
+  display: flex;
+  flex-direction: column;
+  
+}
+.footerCol:nth-child(5) {
+  order: 1;
+}
+.footerCol:last-child {
+  order: 2;
+}
 }
 
 /* None Screen */
